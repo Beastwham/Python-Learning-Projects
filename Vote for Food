@@ -1,0 +1,19 @@
+import ast,sys
+input_str = sys.stdin.read()
+votes = ast.literal_eval(input_str)
+d={}
+for a in votes:
+    d[a] = votes.count(a)
+
+
+no_of_votes = len(votes)
+
+keys_list = list(d.keys())
+values_list = list(d.values())
+
+max_votes = max(values_list)
+
+if max_votes>(no_of_votes/2):
+    print(keys_list[values_list.index(max_votes)])
+else:
+    print('NOTA')
